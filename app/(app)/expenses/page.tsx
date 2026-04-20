@@ -5,7 +5,8 @@ import { formatINR } from "@/lib/utils";
 import { isDemoMode, demoTransactions, demoInsight } from "@/lib/demo";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis } from "recharts";
 
-const COLORS = ["#00d4aa", "#8b5cf6", "#f59e0b", "#ef4444", "#3b82f6", "#ec4899", "#84cc16", "#06b6d4"];
+// Vibrant multi-color palette — keeps categories distinguishable against the dark gold theme
+const COLORS = ["#d4af37", "#8b5cf6", "#10b981", "#ef4444", "#3b82f6", "#ec4899", "#f59e0b", "#06b6d4"];
 
 function titleCase(s: string) {
   return (s || "other").replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
@@ -18,7 +19,7 @@ function PieTooltip({ active, payload, total }: any) {
   const value = Number(p.value) || 0;
   const pct = total > 0 ? ((value / total) * 100).toFixed(1) : "0.0";
   return (
-    <div className="rounded-xl border border-border bg-[#111218]/95 px-3 py-2 shadow-lg backdrop-blur">
+    <div className="rounded-xl border border-border bg-[#121212]/95 px-3 py-2 shadow-lg backdrop-blur">
       <div className="flex items-center gap-2">
         <span className="h-2.5 w-2.5 rounded-full" style={{ background: p.payload?.fill || p.color }} />
         <span className="text-sm font-semibold text-fg">{name}</span>
@@ -32,7 +33,7 @@ function PieTooltip({ active, payload, total }: any) {
 function BarTooltip({ active, payload, label }: any) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="rounded-xl border border-border bg-[#111218]/95 px-3 py-2 shadow-lg backdrop-blur">
+    <div className="rounded-xl border border-border bg-[#121212]/95 px-3 py-2 shadow-lg backdrop-blur">
       <div className="text-sm font-semibold text-fg">{titleCase(label)}</div>
       <div className="mt-1 text-sm text-brand">{formatINR(Number(payload[0].value) || 0)}</div>
     </div>
@@ -111,7 +112,7 @@ export default function Expenses() {
                 innerRadius={60}
                 outerRadius={100}
                 paddingAngle={2}
-                stroke="#0a0b0f"
+                stroke="#0a0a0a"
                 strokeWidth={2}
                 isAnimationActive
               >
@@ -125,10 +126,14 @@ export default function Expenses() {
           <h2 className="mb-4 font-display text-lg font-semibold">Top categories</h2>
           <ResponsiveContainer width="100%" height={260}>
             <BarChart data={byCategory.sort((a, b) => b.value - a.value).slice(0, 6)}>
-              <XAxis dataKey="name" stroke="#6b7280" fontSize={11} tickFormatter={titleCase} />
-              <YAxis stroke="#6b7280" fontSize={11} />
+              <XAxis dataKey="name" stroke="#a1a1aa" fontSize={11} tickFormatter={titleCase} />
+              <YAxis stroke="#a1a1aa" fontSize={11} />
               <Tooltip content={<BarTooltip />} cursor={{ fill: "rgba(255,255,255,0.03)" }} />
-              <Bar dataKey="value" fill="#00d4aa" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="value" radius={[6, 6, 0, 0]}>
+                {byCategory.sort((a, b) => b.value - a.value).slice(0, 6).map((_, i) => (
+                  <Cell key={i} fill={COLORS[i % COLORS.length]} />
+                ))}
+              </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>

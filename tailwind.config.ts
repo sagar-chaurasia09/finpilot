@@ -6,21 +6,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#0a0b0f",
-        surface: "#111218",
-        border: "#1e2029",
-        muted: "#6b7280",
-        fg: "#e5e7eb",
-        brand: { DEFAULT: "#00d4aa", dark: "#00b894" },
-        accent: { DEFAULT: "#8b5cf6", dark: "#7c3aed" },
+        // Midnight Gold palette
+        bg: "#0a0a0a",
+        surface: "#121212",
+        border: "#262626",
+        muted: "#a1a1aa",
+        fg: "#f9fafb",
+        brand: { DEFAULT: "#d4af37", dark: "#b8941f" },   // Royal gold
+        accent: { DEFAULT: "#f59e0b", dark: "#d97706" },  // Amber
+        gold: {
+          50: "#fdf7e3",
+          100: "#f9e9a8",
+          200: "#f1d678",
+          300: "#e5c24a",
+          400: "#d4af37",
+          500: "#b8941f",
+          600: "#8f7017",
+        },
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui"],
         display: ["Cabinet Grotesk", "Satoshi", "Inter", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 0 24px rgba(0, 212, 170, 0.25)",
-        "glow-accent": "0 0 24px rgba(139, 92, 246, 0.25)",
+        glow: "0 0 24px rgba(212, 175, 55, 0.28)",
+        "glow-accent": "0 0 24px rgba(245, 158, 11, 0.28)",
+        "glow-lg": "0 0 60px -10px rgba(212, 175, 55, 0.5)",
       },
     },
   },

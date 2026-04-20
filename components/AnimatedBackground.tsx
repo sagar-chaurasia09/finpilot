@@ -43,31 +43,31 @@ export default function AnimatedBackground() {
       style={{ ["--px" as any]: "0px", ["--py" as any]: "0px" }}
     >
       {/* Deep vignette */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(0,212,170,0.08),transparent_55%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(139,92,246,0.08),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.10),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(245,158,11,0.08),transparent_55%)]" />
 
       {/* Aurora blobs */}
       <div
-        className="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full blur-3xl opacity-50 animate-aurora"
+        className="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full blur-3xl opacity-45 animate-aurora"
         style={{
           background:
-            "radial-gradient(circle at 30% 30%, rgba(0,212,170,0.45), transparent 60%)",
+            "radial-gradient(circle at 30% 30%, rgba(212,175,55,0.55), transparent 60%)",
           transform: "translate3d(calc(var(--px)*1.2), calc(var(--py)*1.2), 0)",
         }}
       />
       <div
-        className="absolute top-1/3 -right-40 h-[560px] w-[560px] rounded-full blur-3xl opacity-40 animate-drift"
+        className="absolute top-1/3 -right-40 h-[560px] w-[560px] rounded-full blur-3xl opacity-35 animate-drift"
         style={{
           background:
-            "radial-gradient(circle at 60% 50%, rgba(139,92,246,0.45), transparent 60%)",
+            "radial-gradient(circle at 60% 50%, rgba(245,158,11,0.45), transparent 60%)",
           transform: "translate3d(calc(var(--px)*-1), calc(var(--py)*-1), 0)",
         }}
       />
       <div
-        className="absolute bottom-[-160px] left-1/4 h-[480px] w-[480px] rounded-full blur-3xl opacity-30 animate-pulse-slow"
+        className="absolute bottom-[-160px] left-1/4 h-[480px] w-[480px] rounded-full blur-3xl opacity-25 animate-pulse-slow"
         style={{
           background:
-            "radial-gradient(circle, rgba(0,212,170,0.35), transparent 65%)",
+            "radial-gradient(circle, rgba(253,230,138,0.35), transparent 65%)",
           transform: "translate3d(calc(var(--px)*0.6), calc(var(--py)*0.6), 0)",
         }}
       />

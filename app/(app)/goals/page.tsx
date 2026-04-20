@@ -71,8 +71,8 @@ export default function Goals() {
             <LineChart data={data}>
               <XAxis dataKey="month" stroke="#6b7280" fontSize={12} tickFormatter={(m) => `${Math.round(m / 12)}y`} />
               <YAxis stroke="#6b7280" fontSize={12} tickFormatter={(v) => `${(v / 100000).toFixed(0)}L`} />
-              <Tooltip formatter={(v: number) => formatINR(v)} contentStyle={{ background: "#111218", border: "1px solid #1e2029" }} />
-              <Line type="monotone" dataKey="value" stroke="#00d4aa" strokeWidth={2.5} dot={false} />
+              <Tooltip formatter={(v: number) => formatINR(v)} contentStyle={{ background: "#121212", border: "1px solid #262626", borderRadius: 12 }} labelStyle={{ color: "#f9fafb" }} />
+              <Line type="monotone" dataKey="value" stroke="#d4af37" strokeWidth={2.5} dot={false} />
             </LineChart>
           </ResponsiveContainer>
         </div>

@@ -152,8 +152,8 @@ function MiniChart() {
     <svg viewBox="0 0 100 40" className="mt-3 h-14 w-full" preserveAspectRatio="none">
       <defs>
         <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stopColor="#00d4aa" stopOpacity="0.5" />
-          <stop offset="100%" stopColor="#00d4aa" stopOpacity="0" />
+          <stop offset="0%" stopColor="#d4af37" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="#d4af37" stopOpacity="0" />
         </linearGradient>
       </defs>
       <motion.path
@@ -166,7 +166,7 @@ function MiniChart() {
       <motion.path
         d={path}
         fill="none"
-        stroke="#00d4aa"
+        stroke="#d4af37"
         strokeWidth="1.5"
         strokeLinecap="round"
         initial={{ pathLength: 0 }}
