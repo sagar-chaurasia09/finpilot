@@ -53,3 +53,4 @@ pnpm dev
 - All user data (goals/tx/FDs/chats) is RLS-protected; admin routes use service role.
 - Claude calls go through server-only API routes with per-user rate limits and are logged to `ai_calls` for cost tracking.
 - Feature flags drive gradual rollout from `/admin/features`.
+# finpilot-
